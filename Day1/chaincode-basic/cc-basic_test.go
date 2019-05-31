@@ -67,7 +67,7 @@ func TestInit(t *testing.T) {
 // ===========================================================
 //   TestInvoke_Case1: CreateUser Test
 // ===========================================================
-func TestInvoke_Case1(t *testing.T) {
+func TestCreate_Case1(t *testing.T) {
 	SmartContract := new(SmartContract)
 	stub := shim.NewMockStub("SmartContract", SmartContract)
 
@@ -75,6 +75,7 @@ func TestInvoke_Case1(t *testing.T) {
 	checkInvoke(t, stub, [][]byte{[]byte("Create"),
 		[]byte("user01"),
 		[]byte("홍길동")})
+
 	checkState(t, stub, "user01", "홍길")
 }
 
